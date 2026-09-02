@@ -30,32 +30,33 @@ export default function RoutePlanner({ routesData, activeRouteMode, setActiveRou
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-      {/* Route Control Header */}
-      <div className="glass-panel" style={{ padding: '20px' }}>
+      {/* Control Header */}
+      <div className="formal-card" style={{ padding: '20px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <div>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Navigation size={20} className="gradient-text" />
+            <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--royal-navy)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Navigation size={20} style={{ color: 'var(--royal-blue)' }} />
               Multi-Objective Polar Pathfinder Controller
             </h3>
             <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-              Computes ice-resistance adjusted multi-objective routes for research vessels
+              Computes ice-resistance adjusted multi-objective navigation routes for polar research vessels
             </p>
           </div>
 
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
             <div>
-              <label style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', marginBottom: '4px' }}>Vessel Profile</label>
+              <label style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Vessel Profile</label>
               <select
                 value={selectedVessel}
                 onChange={(e) => setSelectedVessel(e.target.value)}
                 style={{
-                  background: 'rgba(7, 13, 24, 0.9)',
-                  color: 'var(--text-main)',
-                  border: '1px solid var(--border-cyan)',
+                  background: '#ffffff',
+                  color: 'var(--text-primary)',
+                  border: '1px solid #cbd5e1',
                   padding: '8px 12px',
                   borderRadius: '6px',
-                  fontFamily: 'inherit'
+                  fontFamily: 'inherit',
+                  fontSize: '0.85rem'
                 }}
               >
                 {vessels.map(v => <option key={v.key} value={v.key}>{v.name} ({v.class})</option>)}
@@ -63,17 +64,18 @@ export default function RoutePlanner({ routesData, activeRouteMode, setActiveRou
             </div>
 
             <div>
-              <label style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', marginBottom: '4px' }}>Destination Base</label>
+              <label style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Destination Station</label>
               <select
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
                 style={{
-                  background: 'rgba(7, 13, 24, 0.9)',
-                  color: 'var(--text-main)',
-                  border: '1px solid var(--border-cyan)',
+                  background: '#ffffff',
+                  color: 'var(--text-primary)',
+                  border: '1px solid #cbd5e1',
                   padding: '8px 12px',
                   borderRadius: '6px',
-                  fontFamily: 'inherit'
+                  fontFamily: 'inherit',
+                  fontSize: '0.85rem'
                 }}
               >
                 <option value="MAITRI">Maitri Station (Queen Maud Land)</option>
@@ -83,29 +85,29 @@ export default function RoutePlanner({ routesData, activeRouteMode, setActiveRou
 
             <button className="btn-primary" onClick={handleCompute} disabled={loading} style={{ marginTop: '16px' }}>
               <Anchor size={16} />
-              {loading ? 'Computing Routes...' : 'Calculate Optimal Routes'}
+              {loading ? 'Calculating...' : 'Calculate Optimal Routes'}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Route Mode Filter Tabs */}
-      <div style={{ display: 'flex', gap: '10px' }}>
+      {/* Filter Tabs */}
+      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
         {[
-          { key: 'ALL', label: 'View All Routes', color: 'var(--accent-cyan)' },
-          { key: 'fuel_efficient', label: 'Optimal Fuel Route', color: '#00f2fe' },
-          { key: 'safety', label: 'Maximum Safety Route', color: '#00e676' },
-          { key: 'shortest', label: 'Shortest Route', color: '#ff416c' }
+          { key: 'ALL', label: 'View All Routes', color: 'var(--royal-navy)' },
+          { key: 'fuel_efficient', label: 'Optimal Fuel Route', color: '#1d4ed8' },
+          { key: 'safety', label: 'Maximum Safety Route', color: '#15803d' },
+          { key: 'shortest', label: 'Shortest Route', color: '#dc2626' }
         ].map(tab => (
           <button
             key={tab.key}
             onClick={() => setActiveRouteMode(tab.key)}
             className="btn-outline"
             style={{
-              borderColor: activeRouteMode === tab.key ? tab.color : 'var(--border-cyan)',
-              color: activeRouteMode === tab.key ? tab.color : 'var(--text-main)',
-              background: activeRouteMode === tab.key ? 'rgba(0, 242, 254, 0.1)' : 'transparent',
-              fontWeight: activeRouteMode === tab.key ? 700 : 400
+              borderColor: activeRouteMode === tab.key ? tab.color : '#cbd5e1',
+              color: activeRouteMode === tab.key ? tab.color : 'var(--text-primary)',
+              background: activeRouteMode === tab.key ? '#eff6ff' : '#ffffff',
+              fontWeight: activeRouteMode === tab.key ? 700 : 500
             }}
           >
             {tab.label}
@@ -113,26 +115,26 @@ export default function RoutePlanner({ routesData, activeRouteMode, setActiveRou
         ))}
       </div>
 
-      {/* Triple Route Comparison Cards Grid */}
+      {/* Comparison Cards Grid */}
       {rData && (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))', gap: '16px' }}>
           {/* 1. Optimal Fuel Route Card */}
-          <div className="glass-panel" style={{
+          <div className="formal-card" style={{
             padding: '20px',
-            borderLeft: '4px solid #00f2fe',
-            opacity: (activeRouteMode === 'ALL' || activeRouteMode === 'fuel_efficient') ? 1 : 0.5
+            borderLeft: '4px solid #1d4ed8',
+            opacity: (activeRouteMode === 'ALL' || activeRouteMode === 'fuel_efficient') ? 1 : 0.6
           }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-              <span className="badge badge-cyan" style={{ fontSize: '0.8rem' }}>RECOMMENDED FOR NCPOR</span>
+              <span className="badge badge-royal">RECOMMENDED ROUTE</span>
               <button
                 className="btn-outline"
                 onClick={() => handleExport(rData.fuel_efficient, 'OptimalFuel')}
                 style={{ padding: '4px 8px', fontSize: '0.75rem' }}
               >
-                <Download size={12} /> GPX/JSON
+                <Download size={12} /> Export Waypoints
               </button>
             </div>
-            <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#00f2fe' }}>Optimal Fuel Route</h4>
+            <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1d4ed8' }}>Optimal Fuel Route</h4>
             <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '16px' }}>
               Balances wave drag, sea-ice resistance & tailwinds to minimize MGO fuel consumption.
             </p>
@@ -140,7 +142,7 @@ export default function RoutePlanner({ routesData, activeRouteMode, setActiveRou
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
               <div className="stat-card">
                 <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Est. Fuel Burn</div>
-                <div style={{ fontSize: '1.25rem', fontWeight: 700 }} className="mono">{rData.fuel_efficient.total_fuel_tons} Tons</div>
+                <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#1d4ed8' }} className="mono">{rData.fuel_efficient.total_fuel_tons} Tons</div>
               </div>
               <div className="stat-card">
                 <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Voyage ETA</div>
@@ -152,30 +154,30 @@ export default function RoutePlanner({ routesData, activeRouteMode, setActiveRou
               </div>
               <div className="stat-card">
                 <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Max Ice Risk</div>
-                <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#00e676' }} className="mono">{rData.fuel_efficient.max_sea_ice_risk_pct}%</div>
+                <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#15803d' }} className="mono">{rData.fuel_efficient.max_sea_ice_risk_pct}%</div>
               </div>
             </div>
           </div>
 
           {/* 2. Maximum Safety Route Card */}
-          <div className="glass-panel" style={{
+          <div className="formal-card" style={{
             padding: '20px',
-            borderLeft: '4px solid #00e676',
-            opacity: (activeRouteMode === 'ALL' || activeRouteMode === 'safety') ? 1 : 0.5
+            borderLeft: '4px solid #15803d',
+            opacity: (activeRouteMode === 'ALL' || activeRouteMode === 'safety') ? 1 : 0.6
           }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-              <span className="badge badge-green" style={{ fontSize: '0.8rem' }}>ZERO ICE HAZARD</span>
+              <span className="badge badge-green">MAXIMUM SAFETY</span>
               <button
                 className="btn-outline"
                 onClick={() => handleExport(rData.safety, 'MaxSafety')}
                 style={{ padding: '4px 8px', fontSize: '0.75rem' }}
               >
-                <Download size={12} /> GPX/JSON
+                <Download size={12} /> Export Waypoints
               </button>
             </div>
-            <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#00e676' }}>Maximum Safety Route</h4>
+            <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#15803d' }}>Maximum Safety Route</h4>
             <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '16px' }}>
-              Maintains &gt;15nm buffer from giant icebergs and routes strictly through open water / thin ice.
+              Maintains &gt;15nm buffer from giant icebergs and routes strictly through thin ice / open water.
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
@@ -193,36 +195,36 @@ export default function RoutePlanner({ routesData, activeRouteMode, setActiveRou
               </div>
               <div className="stat-card">
                 <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Safety Score</div>
-                <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#00e676' }} className="mono">{rData.safety.safety_score_100} / 100</div>
+                <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#15803d' }} className="mono">{rData.safety.safety_score_100} / 100</div>
               </div>
             </div>
           </div>
 
           {/* 3. Shortest Route Card */}
-          <div className="glass-panel" style={{
+          <div className="formal-card" style={{
             padding: '20px',
-            borderLeft: '4px solid #ff416c',
-            opacity: (activeRouteMode === 'ALL' || activeRouteMode === 'shortest') ? 1 : 0.5
+            borderLeft: '4px solid #dc2626',
+            opacity: (activeRouteMode === 'ALL' || activeRouteMode === 'shortest') ? 1 : 0.6
           }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-              <span className="badge badge-red" style={{ fontSize: '0.8rem' }}>HIGH ICE RESISTANCE</span>
+              <span className="badge badge-red">DIRECT GEODESIC</span>
               <button
                 className="btn-outline"
                 onClick={() => handleExport(rData.shortest, 'Shortest')}
                 style={{ padding: '4px 8px', fontSize: '0.75rem' }}
               >
-                <Download size={12} /> GPX/JSON
+                <Download size={12} /> Export Waypoints
               </button>
             </div>
-            <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#ff416c' }}>Shortest Geodesic Route</h4>
+            <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#dc2626' }}>Shortest Geodesic Route</h4>
             <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '16px' }}>
-              Direct line path. Crosses heavy consolidated pack ice requiring icebreaking operations.
+              Direct line path. Crosses heavy consolidated pack ice requiring active icebreaking operations.
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
               <div className="stat-card">
                 <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Est. Fuel Burn</div>
-                <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#ff416c' }} className="mono">{rData.shortest.total_fuel_tons} Tons</div>
+                <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#dc2626' }} className="mono">{rData.shortest.total_fuel_tons} Tons</div>
               </div>
               <div className="stat-card">
                 <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Voyage ETA</div>
@@ -234,7 +236,7 @@ export default function RoutePlanner({ routesData, activeRouteMode, setActiveRou
               </div>
               <div className="stat-card">
                 <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Max Ice Risk</div>
-                <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#ff416c' }} className="mono">{rData.shortest.max_sea_ice_risk_pct}%</div>
+                <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#dc2626' }} className="mono">{rData.shortest.max_sea_ice_risk_pct}%</div>
               </div>
             </div>
           </div>
