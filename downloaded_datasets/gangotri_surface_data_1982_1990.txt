@@ -1,0 +1,69 @@
+
+FORMAT FOR ANTARCTICA DAILY SURFACE DATA (1982-1985) :
+----------------------------------------------------
+  COL NO.   EXPLANATION
+   1 -  5   Station Index Number 89510 for Dakshin Gangotri (Base Camp)
+
+   9 - 10   Latitude in degrees
+  11 - 12   Latitude in minutes
+  13 - 14   Latitude in seconds
+    15      Latitude North (N) or South (S) of equator
+
+  16 - 17   Longitude in degrees
+  18 - 19   Longitude in minutes
+  20 - 21   Longitude in seconds
+    22      Longitude East (E) or West (W) of meridian
+
+  23 - 26   Year
+  27 - 28   Month 
+  29 - 30   Date
+  31 - 34   Hour in UTC
+  35 - 37   Wind direction in degrees
+  38 - 40   Wind speed in 0.1 knots
+  41 - 44   Dry-bulb Temperature (in 0.1 degree C)
+  45 - 48   Wet-bulb Temperature (in 0.1 degree C)
+  49 - 53   Atmospheric pressure (in 0.1 hPa)
+
+    54      Cloud Amount in oktas
+    55      Blank
+  56 - 57   Type of cloud
+
+    60      Cloud Amount in oktas
+    61      Blank
+  62 - 63   Type of cloud
+
+    66      Cloud Amount in oktas
+    67      Blank
+  68 - 69   Type of cloud
+
+    72      Cloud Amount in oktas
+    73      Blank
+  74 - 75   Type of cloud
+
+  78 - 79   Visibility in code
+
+  81 - 84   Dew point temperature (in 0.1 degrees C)
+
+  85 -125   Remarks
+
+Note : Visibility Code:
+----------------------
+  Code  Day light observations				      Night observations
+   90   Objects not visible at 50 meters	                100 meters
+   91   Objects visible at 50 meters but	                330 meters  
+        not at 200 meters
+   92   Objects visible at 200 meters but	                740 meters 
+        not at 500 meters
+   93   Objects visible at 500 meters but  		       1340 meters 
+        not at 1000 meters
+   94   Objects visible at 1000 meters but		       2330 meters
+	not at 2000 meters
+   95   Objects visible at 2000 meters but		       4000 meters
+    	not at 4000 meters
+   96   Objects visible at 4000 meters but		       7500 meters
+	not at 10000 meters
+   97   Objects visible at 10000 meters but		      12000 meters
+	not at 20000 meters
+   98   Objects visible at 20000 meters but	
+	not at 50000 meters
+   99   Objects visible at 50000 meters or more

@@ -1,0 +1,15 @@
+	
+----------------------Hydrographic Data---------------------------------------------------------------------------------------------------------------------
+
+Measurements/ data	: Hydrographic Data
+Parameters		: station, latitude(s), longitude (E), Day-month-year, time-GMT, Depth(m),  Temp( ̊C), Salinity (PSU)
+Duration		: 2013 to 2017
+Location		: Maitri, Antarcitca
+Latitude and Longitude	: 70°45′01.65"S:11°43′01.45"E
+Data file format	: ASCII
+File Name		: hydrographic-data-2013-14.xlsb, hydrographic-data-2014-15.xlsb, hydrographic-data-2015-16.xlsb and hydrographic-data-2016-17.xlsb
+Data temporal resolution: 1 minute
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+

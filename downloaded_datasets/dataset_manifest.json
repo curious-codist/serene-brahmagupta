@@ -1,0 +1,86 @@
+{
+  "ncpor_datasets": [
+    {
+      "id": "41",
+      "station": "Maitri Station",
+      "title": "Surface Data (IMD)",
+      "duration": "31/12/2018 - 30/11/2022",
+      "portal_page": "http://data.ncaor.gov.in/newhtml/download/41",
+      "file_details": "http://data.ncaor.gov.in/static/datasets/maitri_1990-2019_SurfaceTableII.txt"
+    },
+    {
+      "id": "70",
+      "station": "Maitri Station",
+      "title": "Automatic Weather Station (AWS) Datasets (IMD)",
+      "duration": "01/01/1985 - 19/12/2016",
+      "portal_page": "http://data.ncaor.gov.in/newhtml/download/70",
+      "file_details": "http://data.ncaor.gov.in/static/datasets/m_imd_aws.txt"
+    },
+    {
+      "id": "40",
+      "station": "Maitri Station",
+      "title": "High Speed Wind Recorder (IMD)",
+      "duration": "01/01/2015 - 31/12/2019",
+      "portal_page": "http://data.ncaor.gov.in/newhtml/download/40",
+      "file_details": "http://data.ncaor.gov.in/static/datasets/m_imd_hswr.txt"
+    },
+    {
+      "id": "42",
+      "station": "Maitri Station",
+      "title": "Hydrographic Data (NCPOR)",
+      "duration": "01/01/2013 - 31/12/2017",
+      "portal_page": "http://data.ncaor.gov.in/newhtml/download/42",
+      "file_details": "http://data.ncaor.gov.in/static/datasets/m_ncpor_hydrographic.txt"
+    },
+    {
+      "id": "52",
+      "station": "Bharati Station",
+      "title": "Surface Data (IMD)",
+      "duration": "31/12/2018 - 30/11/2022",
+      "portal_page": "http://data.ncaor.gov.in/newhtml/download/52",
+      "file_details": "http://data.ncaor.gov.in/static/datasets/Bharati_Dec2018_Nov2022_SurfaceTableII.txt"
+    },
+    {
+      "id": "75",
+      "station": "Bharati Station",
+      "title": "Automatic Weather Station Datasets (IMD)",
+      "duration": "06/02/2015 - 13/11/2016",
+      "portal_page": "http://data.ncaor.gov.in/newhtml/download/75",
+      "file_details": "http://data.ncaor.gov.in/static/datasets/b_imd_aws.txt"
+    },
+    {
+      "id": "67",
+      "station": "Dakshin Gangotri",
+      "title": "Surface Data (IMD)",
+      "duration": "01/01/1982 - 31/12/1985",
+      "portal_page": "http://data.ncaor.gov.in/newhtml/download/67",
+      "file_details": "http://data.ncaor.gov.in/static/datasets/gangotri_surface_data_1982_1990.txt"
+    }
+  ],
+  "external_datasets": [
+    {
+      "title": "NSIDC Southern Ocean Daily Sea Ice Concentration Grids (G02135)",
+      "provider": "NSIDC / NASA Earthdata",
+      "download_url": "https://noaadata.apps.nsidc.org/NOAA/g02135/south/daily/",
+      "type": "Satellite Microwave (NetCDF / GeoTIFF)"
+    },
+    {
+      "title": "US National Ice Center (NIC) Antarctic Iceberg Tracking Database",
+      "provider": "US National Ice Center / NOAA",
+      "download_url": "https://usicecenter.gov/Products/AntarcticIcebergs",
+      "type": "CSV / Shapefile GPS Iceberg Tracks"
+    },
+    {
+      "title": "Copernicus Ocean Physics Reanalysis (CMEMS Global Ocean 1/12\u00b0)",
+      "provider": "Copernicus Marine Service",
+      "download_url": "https://data.marine.copernicus.eu/product/GLOBAL_MULTIYEAR_PHY_001_030/",
+      "type": "Ocean Current Velocities (u, v) & Temperature"
+    },
+    {
+      "title": "ECMWF ERA5 Reanalysis 10m Wind & Surface Pressure",
+      "provider": "ECMWF / Climate Data Store (CDS)",
+      "download_url": "https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels",
+      "type": "NetCDF / GRIB Global Weather"
+    }
+  ]
+}

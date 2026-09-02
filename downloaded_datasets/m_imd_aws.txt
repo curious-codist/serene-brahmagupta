@@ -1,0 +1,17 @@
+
+
+----------------------Surface Data--------------------------------------------------------------------
+
+Measurements/ data	: Surface Data
+Instrument		: Automatic weather station (AWS)
+Parameters		: obstime, tempr, air pressure, wind speed, wind direction, relative huminity
+Duration		: 01-01-1985 to 19-12-2016
+Location		: Maitri, Antarctica
+Latitude and Longitude	: 70°45′01.65"S:11°43′01.45"E
+Data file format	: ASCII
+File Name		: imd_maitri.csv and imd_maitri.nc
+Data temporal resolution: 1 hour
+
+------------------------------------------------------------------------------------------------------
+
+

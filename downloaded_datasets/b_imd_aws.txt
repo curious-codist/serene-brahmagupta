@@ -1,0 +1,17 @@
+
+----------------------Automatic weather station (AWS)-------------------------------------------------
+
+Measurements/ data	: Automatic Weather Station
+Instrument		: Automatic weather station (AWS)
+Parameters		: obstime, tempr, air pressure, wind speed, wind direction, relative huminity 
+Duration		: 06-02-2015 to 13-11-2016
+Location		: Bharati Station, Antarctica.
+Latitude and Longitude	: 69°24.41'S, 76°11.72'E
+Data file format	: ASCII
+File Name		: imd_bharati_fixed_hour.csv and imd_bharati.nc
+Data temporal resolution: 1 hour
+
+------------------------------------------------------------------------------------------------------
+
+
+

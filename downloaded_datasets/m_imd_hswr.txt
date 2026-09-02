@@ -1,0 +1,15 @@
+
+--------------High Wind Speed Recording Systems------------------------------------------------------------------------
+
+Measurements/ data	: High Wind Speed Recording Systems
+Instrument		: High Wind Speed Recording Systems
+Parameters		: CH1: TEMP DRY BULB, CH2: RH, CH3:WIND DIRECTION, CH4:WIND SPEED, CH5: STATION LEVEL PRESSURE
+Duration		: 2015-2019
+Location		: Maitri, Antarctica
+Latitude and Longitude	: 70°45′01.65"S:11°43′01.45"E
+Data file format	: ASCII
+File Name		: highspeedwinrecorder-data-2015-19.zip
+Data temporal resolution: Hourly
+
+-----------------------------------------------------------------------------------------------------------------------
+

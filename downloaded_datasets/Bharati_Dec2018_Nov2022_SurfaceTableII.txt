@@ -1,0 +1,49 @@
+
+FORMAT FOR ANTARCTICA DAILY SURFACE TAB2 DATA :
+---------------------------------------------
+  COL NO.   EXPLANATION
+   1 -  5   Five digit No.to designate the station.
+   6 -  7   Last two digits of the year.
+   8 -  9   Month (01 - January ,..., 12 - December)
+  10 - 11   Date
+
+  12 - 15   Maximum Temperature (in 0.1 degree C)
+  16 - 19   Minimum Temperature (in 0.1 degree C)  
+
+  20 - 21   Average Wind Speed (in Knots) for 24 hours ending 00 UTC
+  22 - 25   Rainfall (in 0.1 mm) in 24 hrs. ending 00 hrs UTC 
+  26 - 28   Evaporation (in 0.1 mm) for 24 hours ending at 00 hrs. UTC
+  29 - 31   Duration of sunshine (0.1 Hour)
+
+    32      Weather Day with Drizzle
+    33      Weather Day with Rain
+    34      Weather Day with Snow
+    35      Weather Day with Sleet
+    36      Weather Day with Hail 
+    37      Weather Day with Thunder
+    38      Weather Day with Drifting snow
+    39      Weather Day with Blowing snow
+    40      Weather Day with Fog
+    41      Weather Day with Gale
+
+  42 - 43   Type                              |      | 
+  44 - 45   Time of Commencement (hour)       |   I  | Description
+  46 - 47   Time of Commencement (minutes)    |   I  | of
+  48 - 49   Time of Cessation (hour)          |   I  | weather
+  50 - 51   Time of Cessation (minutes)       |   I  |
+
+  52 - 53   Type                              |      |
+  54 - 55   Time of Commencement (hour)       |  II  | Description
+  56 - 57   Time of Commencement (minutes)    |  II  | of
+  58 - 59   Time of Cessation (hour)          |  II  | weather
+  60 - 61   Time of Cessation (minutes)       |  II  |
+
+  62 - 63   Type                              |      |
+  64 - 65   Time of Commencement (hour)       | III  | Description
+  66 - 67   Time of Commencement (minutes)    | III  | of
+  68 - 69   Time of Cessation (hour)          | III  | weather
+  70 - 71   Time of Cessation (minutes)       | III  |
+  72 - 77   Blank
+  78 - 79   Millenium
+    80      Digit '1' is entered to indicate the day's Summary data.
+  81 -125   Remarks
