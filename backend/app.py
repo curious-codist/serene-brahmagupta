@@ -100,15 +100,23 @@ def run_simulation():
 
 @app.route('/api/stats', methods=['GET'])
 def get_stats():
+    icebergs = get_active_icebergs_catalog()
+    sic_info = forecaster.forecast_sic(days_ahead=1)
+    baseline = sic_info.get("baseline_comparison", {})
     return jsonify({
         "success": True,
         "metrics": {
             "satellite_grid_resolution_km": 12.5,
-            "sic_forecaster_accuracy_pct": 94.2,
-            "iceberg_tracking_count": 5,
-            "physics_drift_model_rmse_km": 3.8,
-            "fuel_savings_avg_pct": 18.5,
-            "vessels_supported": 3
+            "sic_extent_persistence_mae_sqkm": baseline.get("persistence_mae_million_sqkm"),
+            "sic_extent_climatology_mae_sqkm": baseline.get("climatology_mae_million_sqkm"),
+            "sic_forecaster_note": "Evaluated against 365 days of NSIDC G02135 daily extent observations",
+            "iceberg_tracking_count": len(icebergs),
+            "physics_drift_model_rmse_km": None,
+            "drift_model_rmse_note": "Pending validation against BYU/NIC observed iceberg tracks",
+            "fuel_savings_avg_pct": None,
+            "fuel_savings_note": "Pending measurement — requires A* route vs great-circle baseline comparison",
+            "vessels_supported": 3,
+            "evaluation_status": "partially_evaluated"
         }
     })
 

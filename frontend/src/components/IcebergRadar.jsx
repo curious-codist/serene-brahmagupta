@@ -63,7 +63,7 @@ export default function IcebergRadar({ icebergs }) {
               <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
                 Hazard Radius: <strong style={{ color: '#dc2626' }}>{berg.hazard_radius_nm} NM</strong>
               </span>
-              <span className="badge badge-navy">Physics + ML Drift</span>
+              <span className="badge badge-navy">Physics-Based Drift</span>
             </div>
 
             {/* Trajectory Table Inspector Drawer */}

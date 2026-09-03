@@ -218,3 +218,80 @@ td, th {
 tr:nth-child(even) {
   background-color: #f8fafc;
 }
+
+/* Glass Panel (Header) */
+.glass-panel {
+  background: linear-gradient(135deg, #0b1e3d 0%, #0f2b5c 50%, #1e3a8a 100%);
+  color: #ffffff;
+  border-bottom: 1px solid rgba(30, 64, 175, 0.3);
+  box-shadow: 0 4px 12px rgba(11, 30, 61, 0.15);
+}
+
+/* Missing CSS Variables */
+:root {
+  --accent-cyan: #38bdf8;
+  --text-main: #e2e8f0;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Badge Cyan */
+.badge-cyan {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+/* Loading Spinner Animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Header button overrides for dark header context */
+.glass-panel .btn-outline {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.glass-panel .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-color: rgba(56, 189, 248, 0.5);
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border-light) !important;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  .glass-panel nav {
+    gap: 4px !important;
+  }
+  
+  .glass-panel nav .btn-outline {
+    padding: 6px 10px !important;
+    font-size: 0.75rem !important;
+  }
+  
+  .stat-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+  
+  .map-wrapper {
+    height: 400px;
+  }
+}

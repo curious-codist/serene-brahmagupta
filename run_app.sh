@@ -4,9 +4,41 @@ echo "==========================================================================
 echo "🚀 Starting NCPOR Antarctic Navigation & Decision Support System..."
 echo "=========================================================================="
 
+# Detect OS and set Python executable path for virtual environment
+if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+    if [ -f "venv/Scripts/python.exe" ]; then
+        PYTHON_CMD="venv/Scripts/python.exe"
+    else
+        PYTHON_CMD="venv/Scripts/python"
+    fi
+else
+    PYTHON_CMD="venv/bin/python"
+fi
+
+# Check if Python virtual environment exists
+if [ ! -f "$PYTHON_CMD" ]; then
+    echo "❌ Python virtual environment not found at: $PYTHON_CMD"
+    echo ""
+    echo "Please set up the environment before running:"
+    echo "  1. python3 -m venv venv     # On Windows: python -m venv venv"
+    echo "  2. $PYTHON_CMD -m pip install -r requirements.txt"
+    echo ""
+    exit 1
+fi
+
+# Check if frontend dependencies are installed
+if [ ! -d "frontend/node_modules" ]; then
+    echo "📦 frontend/node_modules not found. Installing frontend dependencies..."
+    (cd frontend && npm install)
+    if [ $? -ne 0 ]; then
+        echo "❌ Failed to install frontend dependencies."
+        exit 1
+    fi
+fi
+
 # 1. Start Python Flask API Server (Port 5000)
-echo "1. Launching Python AI/ML Backend Server (Port 5000)..."
-./venv/bin/python backend/app.py &
+echo "1. Launching Flask Backend Server (Port 5000)..."
+$PYTHON_CMD backend/app.py &
 BACKEND_PID=$!
 
 sleep 2

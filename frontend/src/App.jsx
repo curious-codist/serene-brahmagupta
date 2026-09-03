@@ -220,8 +220,8 @@ export default function App() {
             {[
               { path: '/api/health', method: 'GET', desc: 'System health & MoES/NCPOR Metadata', status: apiHealth ? '200 OK' : 'PENDING' },
               { path: '/api/weather', method: 'GET', desc: 'IMD Maitri & Bharati Telemetry Logs', status: weatherData ? '200 OK' : 'PENDING' },
-              { path: '/api/sea-ice/forecast?days=7', method: 'GET', desc: 'Spatiotemporal Sea-Ice Concentration Grids', status: seaIceData ? '200 OK' : 'PENDING' },
-              { path: '/api/icebergs', method: 'GET', desc: '33 NIC Tracked Icebergs & 72h Physics Cones', status: icebergs.length > 0 ? `200 OK (${icebergs.length} bergs)` : 'PENDING' },
+              { path: '/api/sea-ice/forecast?days=7', method: 'GET', desc: 'Heuristic Sea-Ice Concentration Forecast Grids', status: seaIceData ? '200 OK' : 'PENDING' },
+              { path: '/api/icebergs', method: 'GET', desc: 'NIC Tracked Icebergs & 72h Physics-Based Drift Cones', status: icebergs.length > 0 ? `200 OK (${icebergs.length} bergs)` : 'PENDING' },
               { path: '/api/route/compute', method: 'POST', desc: 'Multi-Objective Polar Pathfinder Engine', status: routesData ? '200 OK' : 'PENDING' }
             ].map((endpoint, eIdx) => (
               <div key={`ep-${eIdx}`} className="stat-card" style={{ fontSize: '0.8rem' }}>
@@ -241,7 +241,7 @@ export default function App() {
       <main style={{ flex: 1, padding: '24px', maxWidth: '1600px', width: '100%', margin: '0 auto' }}>
         {error && (
           <div className="glass-panel" style={{ padding: '16px', borderLeft: '4px solid #ff416c', marginBottom: '16px', color: '#ff416c' }}>
-            <ShieldAlert size={18} inline style={{ marginRight: '8px' }} /> {error}
+            <ShieldAlert size={18} style={{ marginRight: '8px', display: 'inline' }} /> {error}
           </div>
         )}
 

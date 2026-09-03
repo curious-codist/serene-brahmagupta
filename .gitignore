@@ -1,0 +1,41 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Large data files (use download_ncpor_datasets.py to regenerate)
+*.zip
+*.xlsb
+*.nc
+imd_maitri.csv
+imd_bharati_fixed_hour.csv
+surface_data.csv
+downloaded_datasets/
+
+# Keep small data files tracked
+!CSVExport.csv
+!AntarcticIcebergs_20260827.csv
+
+# Node
+node_modules/
+frontend/dist/
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

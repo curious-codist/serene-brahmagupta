@@ -35,7 +35,7 @@ export default function PitchDeck() {
             <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--royal-navy)' }}>Sea-Ice Concentration Forecaster</h3>
           </div>
           <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: '1.5' }}>
-            Spatiotemporal deep learning model trained on satellite passive microwave radiometer grids (SSMIS/AMSR2 style). Predicts 7 to 30 day Sea Ice Concentration (SIC) maps with 94.2% accuracy.
+            Heuristic sea-ice concentration forecaster calibrated against NSIDC satellite sea ice extent observations. Generates 7-day SIC maps using latitude gradient, regional modulation, and scenario-driven projections. Evaluation against persistence baseline pending.
           </p>
         </div>
 
@@ -45,7 +45,7 @@ export default function PitchDeck() {
             <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--royal-navy)' }}>Physics-Informed Iceberg Model</h3>
           </div>
           <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: '1.5' }}>
-            Combines aerodynamic wind shear, hydrodynamic ocean current drag, and Coriolis forces with ML residual tracking to project 72-hour drift trajectories and collision hazard rings for 33 real NIC tracked icebergs.
+            Combines aerodynamic wind shear, hydrodynamic ocean current drag, and Coriolis forces to project 72-hour drift trajectories and collision hazard rings for NIC tracked icebergs. Uses Forward Euler integration with physics-based forcing.
           </p>
         </div>
 
@@ -128,8 +128,8 @@ export default function PitchDeck() {
           <div style={{ display: 'flex', gap: '10px' }}>
             <CheckCircle2 size={18} style={{ color: '#15803d', flexShrink: 0 }} />
             <div>
-              <strong>Physics + Machine Learning Hybrid Engine</strong>
-              <p style={{ color: 'var(--text-muted)' }}>Incorporate hydrodynamic drag equations, aerodynamic wind shear, and Coriolis dynamics.</p>
+              <strong>Physics-Based Drift Engine</strong>
+              <p style={{ color: 'var(--text-muted)' }}>Incorporates hydrodynamic drag equations, aerodynamic wind shear, and Coriolis dynamics for iceberg trajectory prediction.</p>
             </div>
           </div>
 

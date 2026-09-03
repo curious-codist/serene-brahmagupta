@@ -7,9 +7,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 
 class IcebergDriftEngine:
     """
-    Physics-Informed ML Iceberg Trajectory Predictor.
-    Simulates iceberg drift vectors driven by atmospheric wind shear, ocean current drag,
-    Coriolis forces, and keel geometry factors.
+    Physics-based iceberg trajectory predictor.
+    Computes iceberg drift using Lagrangian particle tracking with:
+    - Aerodynamic drag (wind shear on above-water sail area)
+    - Hydrodynamic drag (ocean current on below-water keel area)
+    - Coriolis acceleration
+    Forward Euler integration with velocity clamping for numerical stability.
+
+    NOTE: Not an ML model. Uses constant forcing fields (single wind/current vector).
+    TODO: Integrate spatially varying ERA5 wind and CMEMS ocean current fields,
+    and validate trajectories against BYU/NIC observed iceberg positions.
     """
     def __init__(self):
         # Default physical constants for Southern Ocean
@@ -77,12 +84,14 @@ class IcebergDriftEngine:
             u_ice += a_x * dt
             v_ice += a_y * dt
 
-            # Add subtle mesoscale ML eddy residual
-            ml_eddy_u = 0.03 * math.sin(step * 0.2)
-            ml_eddy_v = 0.03 * math.cos(step * 0.2)
+            # Placeholder perturbation simulating unresolved mesoscale eddy effects.
+            # TODO: Replace with learned residual from observed vs predicted trajectory error,
+            # or sample from ERA5/CMEMS mesoscale eddy kinetic energy fields.
+            eddy_perturbation_u = 0.03 * math.sin(step * 0.2)
+            eddy_perturbation_v = 0.03 * math.cos(step * 0.2)
             
-            effective_u_ice = np.clip(u_ice + ml_eddy_u, -2.5, 2.5)
-            effective_v_ice = np.clip(v_ice + ml_eddy_v, -2.5, 2.5)
+            effective_u_ice = np.clip(u_ice + eddy_perturbation_u, -2.5, 2.5)
+            effective_v_ice = np.clip(v_ice + eddy_perturbation_v, -2.5, 2.5)
 
             # Update coordinates
             dx_meters = effective_u_ice * dt
