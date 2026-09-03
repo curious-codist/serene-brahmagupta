@@ -285,12 +285,12 @@ We welcome contributions from hackathon team members and future collaborators! P
 
 ## 👥 Team Information
 
-- **Institution / Team**: *[Insert Team Name / College Name]*
-- **Smart India Hackathon 2026**: Team ID *[Insert Team ID]*
+- **Institution / Team**: *[kuch_bhi / IIT Kharagpur]*
+- **Smart India Hackathon 2026**: 
 - **Members**:
-  - Member 1 (Team Lead) - *[Contact]*
-  - Member 2 - *[Role]*
-  - Member 3 - *[Role]*
-  - Member 4 - *[Role]*
-  - Member 5 - *[Role]*
-  - Member 6 - *[Role]*
+  - Member 1 - Pranav Agrawal
+  - Member 2 - Aryan Baheti
+  - Member 3 - Rachana Balot
+  - Member 4 - Rudra Pratap
+  - Member 5 - Harsh Lamba
+  - Member 6 - Saurav Raj
